@@ -6,12 +6,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayName:' ',
-      latitude:' ',
-      longitude:' ',
+      displayName: ' ',
+      latitude: ' ',
+      longitude: ' ',
 
-      show:false,
-      error:''
+      show: false,
+      error: ''
     }
   }
   namelocation = (e) => {
@@ -27,7 +27,7 @@ class App extends Component {
 
 
 
-      this.setState({ 
+      this.setState({
         displayName: axiResponse.data[0].display_name,
         latitude: axiResponse.data[0].lat,
         longitude: axiResponse.data[0].lon,
@@ -50,22 +50,22 @@ class App extends Component {
           <input type='text' onChange={(e) => { this.namelocation(e) }} />
           <button >Explore for city</button>
         </form>
-        
+
 
         {this.state.show &&
-         <h1>City Name{this.state.displayName}</h1>}
+          <h1>City Name{this.state.displayName}</h1>}
 
-         <h2>latitude:{this.state.latitude}</h2> ,
+        <h2>latitude:{this.state.latitude}</h2>
 
-        <h2>longitude:  {this.state.longitude }</h2>, 
-        <br/>,
-        <br/>,
-        <br/>,
-        <br/>
-   
-      }
-      <img src={`https://maps.locationiq.com/v3/staticmap?key=pk.c6f749ed3369fcaa6d4dfb08d3391e9c&center=${this.state.latitude},${this.state.longitude}&zoom=18&format=png`} width='300px' height='300px' />
-        
+        <h2>longitude:  {this.state.longitude}</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <img src={`https://maps.locationiq.com/v3/staticmap?key=pk.c6f749ed3369fcaa6d4dfb08d3391e9c&center=${this.state.latitude},${this.state.longitude}&zoom=18&format=png`} width='300px' height='300px' />
+      
+
       </div>
     )
   }
